@@ -1,0 +1,26 @@
+2.1.5 
+1. high frequency clock, control unit, arithmetic logic unit
+2. data, i/o, address
+3. to fetch memory, 4 steps are required instead of one
+4. fetch, decode, execute
+5. fetches the operands from register and memory, and ususe them
+
+2.4.3
+5. handles interrupts from hardware devices such as a keyboard and disk drives
+
+2.5.2
+1. the third level, because it is generic 
+3. in order to allow mulitple programs to run simutaneously
+4. the bios
+5. no
+
+2.8
+7. floating point unit
+8. 48
+9. true
+10. false
+12. false
+19. false
+20. false
+25. hardware, bios, os, library
+26. less latency
