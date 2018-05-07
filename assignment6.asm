@@ -53,8 +53,10 @@ Fib proc uses esi ecx eax
 	; Fib(n - 1) + Fib(n - 2) whatever
 	; Fib(2) = 1
 	; Fib(3) = 2
-	mov fibarray[esi],0
-	mov fibarray[esi + 4],1
+    mov eax,0
+	mov [esi],1
+    mov eax,1
+    mov [esi + 4],eax
 	sub ecx,2
 	add esi,TYPE DWORD * 2
 woop:
