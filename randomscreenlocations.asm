@@ -6,31 +6,33 @@ Include Irvine32.inc
 .stack 4096
 ExitProcess proto,dwExitCode:dword
 .data
-fibarray DWORD 47 DUP(?)
+rows BYTE ?
+cols BYTE ?
 .code
-Fib proc uses
-	; esi = array offset (OFFSET fibarray)
-	; ecx = values of array (47)
-	; Fib(0) = 0
-	; Fib(1) = 1
-	; Fib(n - 1) + Fib(n - 2) whatever
-	; Fib(2) = 1
-	; Fib(3) = 2
-	mov [esi],0
-	mov [esi + 4],1
-	sub ecx,2
-	add esi,TYPE DWORD * 2;
-loop:
-	mov [esi],[esi - TYPE DWORD];
-	add [esi],[esi - TYPE DWORD * 2];
-	add esi,TYPE DWORD * 2;
-	loop
-	ret
-Fib endp
-
 main proc
-	mov esi,OFFSET fibarray
-	mov ecx,47
+	mov ecx,100
+	call GetMaxXY
+	mov rows,al
+	mov cols,dl
+
+poop:
+	mov al,rows ; lower 8 in eax
+	call RandomRange
+	mov dh,al ; arg1 in gotoxy
+
+	mov al,cols ; lower 8 in eax
+	call RandomRange
+	mov dl,al arg2 in gotoxy
+
+	call GoToXY
+
+	mov al,'#'
+	call WriteChar
+
+	mov eax,100
+	call Delay
+
+	loop poop
 	invoke ExitProcess,0
 main endp
 end main
