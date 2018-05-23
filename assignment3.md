@@ -32,7 +32,7 @@
 
 3.5.5
 
-3. ArraySize = ($ - myArray) * 2
+3. `ArraySize = ($ - myArray) / 2`
 
 3.9.1
 
@@ -41,17 +41,11 @@
 6. to save storage, to ensure no change in values, for to signify concepts
 25. name DWORD `value`
 
-Algorithm Workbench
-
-4.
-7.
-13.
-- [ ] 3.9.2 Algorithm Workbench, Questions 4, 7, 13
-- [ ] 3.10 Programming Exercises, Pick any 1 exercise
+3.9.2 Algorithm Workbench
 
 4. Unsigned, so wraps around to create a large positive number
 7. array DWORD 120 DUP(?)
-10. string BYTE 500 DUP("TEST")
+13. string BYTE 500 DUP("TEST")
 
 ; AddTwo.asm - adds two 32-bit integers.
 ; Chapter 3 example
